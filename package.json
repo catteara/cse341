@@ -1,7 +1,6 @@
 {
   "name": "cse341",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/catteara/cse341/issues"
   },
-  "homepage": "https://github.com/catteara/cse341#readme"
+  "homepage": "https://github.com/catteara/cse341#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }
