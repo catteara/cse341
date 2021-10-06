@@ -1,4 +1,5 @@
 const path = require('path');
+const cors = require('cors')
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -32,9 +33,25 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+const corsOptions = {
+  origin: "https://<your_app_name>.herokuapp.com/",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
+};
+
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb+srv://pkk1998:J9GjtLyTyxjbUiAv@cluster0.2jkph.mongodb.net/shop';
+
 mongoose
   .connect(
-    'mongodb+srv://pkk1998:J9GjtLyTyxjbUiAv@cluster0.2jkph.mongodb.net/shop'
+    MONGODB_URL, options
   )
   .then(result => {
     User.findOne().then(user => {
@@ -49,7 +66,7 @@ mongoose
         user.save();
       }
     });
-    app.listen(process.env.PORT || 3000) //Change was made here for Heroku
+    app.listen(PORT);
   })
   .catch(err => {
     console.log(err);
