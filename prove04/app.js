@@ -66,7 +66,8 @@ mongoose
         user.save();
       }
     });
-    app.listen(PORT);
+    app.listen(process.env.PORT || 3000);
+    //app.listen(PORT)
   })
   .catch(err => {
     console.log(err);
