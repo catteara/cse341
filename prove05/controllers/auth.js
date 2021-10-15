@@ -34,7 +34,7 @@ exports.getSignup = (req, res, next) => {
   } else {
     message = null;
   }
-  res.render('/views/auth/signup', {
+  res.render('auth/signup', {
     path: '/signup',
     pageTitle: 'Signup',
     errorMessage: message
