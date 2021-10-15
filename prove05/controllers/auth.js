@@ -73,6 +73,8 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.postSignup = (req, res, next) => {
+  const fname = req.body.fname;
+  const lname = req.body.lname;
   const email = req.body.email;
   const password = req.body.password;
   const confirmPassword = req.body.confirmPassword;
@@ -89,6 +91,8 @@ exports.postSignup = (req, res, next) => {
         .hash(password, 12)
         .then(hashedPassword => {
           const user = new User({
+            fname: fname,
+            lname: lname,
             email: email,
             password: hashedPassword,
             cart: { items: [] }
