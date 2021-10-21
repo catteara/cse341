@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node prove05/app.js"
+    "start": "node prove06/app.js"
   },
   "repository": {
     "type": "git",

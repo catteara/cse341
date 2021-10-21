@@ -22,7 +22,7 @@ const store = new MongoDBStore({
 const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views'); // __dirname + was added to work with Heroku 
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
