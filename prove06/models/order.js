@@ -10,6 +10,12 @@ const orderSchema = new Schema({
     }
   ],
   user: {
+    fname: {
+      type: String,
+    },
+    lname: {
+      type: String,
+    },
     email: {
       type: String,
       required: true
